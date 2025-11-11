@@ -1,10 +1,10 @@
-# ML_TripAdvisor_Pipeline
+# TripAdvisor ML Pipeline
 
 Predicting Restaurant Success on Tripadvisor (Italy)
 
 A reproducible ML pipeline that predicts whether an Italian restaurant will be a high performer on Tripadvisor (defined as average rating ≥ 4.5 with review volume above the dataset mean). The project walks from raw, messy data to a tuned model with explainable features and deployment-ready artifacts.
 
-✨ Highlights
+Highlights
 
 End-to-end: data cleaning → EDA → imputation & outlier control → feature engineering → feature selection → imbalance handling → model selection & tuning
 
@@ -14,33 +14,7 @@ Human-context features: spatial density, distance to city center, dietary inclus
 
 Reproducible artifacts: saved datasets, selected features, tuned pipeline, metrics, and a summary deck
 
-📂 Repository Structure (suggested)
-.
-├─ data/
-│  ├─ raw/                      # original inputs (not committed if large)
-│  ├─ interim/                  # after each pipeline phase
-│  └─ processed/                # modeling-ready artifacts
-├─ notebooks/                   # optional: if you keep .ipynb
-├─ src/
-│  ├─ data_preparation.py
-│  ├─ eda.py
-│  ├─ missings_outliers.py
-│  ├─ feature_engineering.py
-│  └─ modeling.py               # FS, SMOTE, training, tuning, export
-├─ artifacts/
-│  ├─ selected_features.csv
-│  ├─ chosen_params.json
-│  ├─ selected_model_metrics.csv
-│  └─ best_<Model>_pipeline.joblib
-├─ presentation/
-│  └─ Tripadvisor_Restaurant_Success_Analysis.pptx
-├─ requirements.txt
-└─ README.md
-
-
-If you prefer running the exact uploaded scripts, keep your file names as-is and adjust the commands below accordingly.
-
-🛠️ Environment
+Environment
 python>=3.10
 pip install -r requirements.txt
 
@@ -59,7 +33,7 @@ missingno
 folium
 pygeohash
 
-▶️ Quickstart (local)
+Quickstart (local)
 # 1) Data prep  → produces data/interim/df_main.pkl and logs
 python src/data_preparation.py
 
@@ -87,7 +61,7 @@ selected_model_metrics.csv – test metrics table
 
 best_<Model>_pipeline.joblib – drop-in pipeline: preprocess + FS + SMOTE + model
 
-🔍 Project Logic (1–2 lines per phase)
+Project Logic (1–2 lines per phase)
 
 Data Preparation
 
@@ -129,7 +103,7 @@ Candidates: Logistic Regression, Random Forest, XGBoost, Decision Tree, GBM, Lin
 
 Leaderboard by ROC-AUC; grid-search winner; save tuned pipeline + metrics and selected features.
 
-📈 Interpreting the Model
+Interpreting the Model
 
 Common top signals:
 
@@ -141,7 +115,7 @@ Inclusiveness & operations (is_full_diet_friendly, is_full_week, shift_length_ho
 
 Economics & prestige (price_level, michelin_x_price)
 
-🧪 Reusing the Model (inference)
+Reusing the Model (inference)
 import joblib, pandas as pd
 
 pipe = joblib.load("artifacts/best_<Model>_pipeline.joblib")
@@ -152,7 +126,7 @@ pred  = (proba >= 0.5).astype(int)
 
 The exported pipeline already contains preprocessing, feature selection, SMOTE handling (only used during training), and the trained classifier.
 
-🖥️ Slides
+Slides
 
 A 10-slide summary deck is included:
 
@@ -161,7 +135,7 @@ presentation/Tripadvisor_Restaurant_Success_Analysis.pptx
 
 Import to Canva or present directly.
 
-🔒 Data & Ethics
+Data & Ethics
 
 Input is user-generated, noisy, and may carry biases (tourist hubs, language visibility).
 
@@ -169,10 +143,4 @@ Leakage-prone fields are excluded from training.
 
 Do not commit raw data with private or license-restricted content.
 
-📜 License
 
-Choose one and add a LICENSE file (MIT recommended for open sharing).
-
-🙌 Acknowledgments
-
-Thanks to the Tripadvisor community for user-generated content and to the open-source libraries that power this pipeline (NumPy, pandas, scikit-learn, imbalanced-learn, XGBoost, etc.).
