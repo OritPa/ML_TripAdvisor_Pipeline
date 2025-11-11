@@ -1,6 +1,6 @@
 # TripAdvisor ML Pipeline
 
-Predicting Restaurant Success on Tripadvisor (Italy)
+Predicting Restaurant Success on Tripadvisor (Italy). the dataset was retreived from Kaggle: https://www.kaggle.com/datasets/stefanoleone992/tripadvisor-european-restaurants
 
 A reproducible ML pipeline that predicts whether an Italian restaurant will be a high performer on Tripadvisor (defined as average rating ≥ 4.5 with review volume above the dataset mean). The project walks from raw, messy data to a tuned model with explainable features and deployment-ready artifacts.
 
