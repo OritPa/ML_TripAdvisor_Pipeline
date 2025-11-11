@@ -34,20 +34,20 @@ folium
 pygeohash
 
 Quickstart (local)
-# 1) Data prep  → produces data/interim/df_main.pkl and logs
+ 1) Data prep  → produces data/interim/df_main.pkl and logs
 python src/data_preparation.py
 
-# 2) EDA (optional save of figures to artifacts/eda/)
+ 2) EDA (optional save of figures to artifacts/eda/)
 python src/eda.py
 
-# 3) Missing values & outliers → data/interim/df_after_outliers.pkl
+ 3) Missing values & outliers → data/interim/df_after_outliers.pkl
 python src/missings_outliers.py
 
-# 4) Feature engineering → data/processed/df_after_feature_engineering.pkl
+ 4) Feature engineering → data/processed/df_after_feature_engineering.pkl
 python src/feature_engineering.py
 
-# 5) Modeling: split, preprocess (OHE/median), FS (VT + MI k=30), SMOTE, train candidates,
-#    leaderboard, grid-search winner, export artifacts/
+ 5) Modeling: split, preprocess (OHE/median), FS (VT + MI k=30), SMOTE, train candidates,
+    leaderboard, grid-search winner, export artifacts/
 python src/modeling.py
 
 
